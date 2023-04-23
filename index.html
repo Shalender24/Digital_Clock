@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <script>
+      let a;
+      let time;
+      let date;
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setInterval(() => {
+        a = new Date();
+        time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds();
+        date = a.toLocaleDateString(undefined, options);
+        document.getElementById("time").innerHTML = time + "<br>on<br>" + date;
+      }, 1000);
+    </script>
+    <style>
+      body {
+        background-color: #f4eee0;
+      }
+      div {
+        margin: 100px;
+        text-align: center;
+        border: 40px;
+        border-radius: 10px;
+        background-color: #4f4557;
+
+        padding: 50px 100px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 50px;
+
+        color: #f4eee0;
+        box-shadow: 10px 5px 5px #6d5d6e;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>
+        Current Time is <br />
+        <span id="time"></span>
+      </p>
+    </div>
+  </body>
+</html>
